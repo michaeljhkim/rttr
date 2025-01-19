@@ -1,0 +1,41 @@
+NOTE: areas updated and fixed has been marked with - // TODO: updated by Atomontage
+
+
+src/rttr/detail/conversion/number_conversion.h
+- floating point conversion
+- static_cast<F> for numeric limits int to float
+
+
+src/rttr/detail/impl/associative_mapper_impl.h
+- static bool insert_key_value
+
+
+src/rttr/detail/impl/sequential_mapper_impl.h
+- static bool set_value
+
+
+src/rttr/detail/misc/template_type_trait_impl.h
+- #define RTTR_ADD_TYPE_TRAIT_SPECIALIZATION_1
+    entire thing
+- #define RTTR_ADD_TYPE_TRAIT_SPECIALIZATION_3
+    every line with: static std::vector<::rttr::type> 
+
+
+src/rttr/detail/base/core_prerequisites.h
+- #define RTTR_CXX_11 1
+- #define RTTR_CXX_14 2
+- #define RTTR_CXX_17 3
+- // C++ standard version
+
+
+src/rttr/detail/misc/misc_type_traits.h
+- template<bool IsFunction>
+    struct decay_except_array;
+- template <typename T, typename Type_List>
+    struct count_type_impl;
+- template<template<class> class Condition, typename T>
+    struct count_if_impl;
+
+
+src/rttr/detail/type/type_register_p.h
+- class RTTR_API type_register_private

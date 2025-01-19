@@ -42,6 +42,11 @@ namespace rttr
 #define RTTR_COMPILER_CLANG 3
 #define RTTR_COMPILER_APPLECLANG 4
 
+//TODO: updated by Atomontage
+#define RTTR_CXX_11 1
+#define RTTR_CXX_14 2
+#define RTTR_CXX_17 3
+
 #define RTTR_ENDIAN_LITTLE 1
 #define RTTR_ENDIAN_BIG 2
 
@@ -59,6 +64,7 @@ namespace rttr
 #   define RTTR_PLATFORM RTTR_PLATFORM_LINUX
 #endif
 
+//TODO: updated by Atomontage
 /////////////////////////////////////////////////////////////////////////////////////////
 // Compiler
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -82,6 +88,17 @@ namespace rttr
 #   define RTTR_COMP_VER _MSC_VER
 #else
 #   error "No known compiler. Abort! Abort!"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// C++ standard version
+/////////////////////////////////////////////////////////////////////////////////////////
+#if ((defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || __cplusplus >= 201703L)
+#   define RTTR_CXX_STD RTTR_CXX_17
+#elif ((defined(_MSVC_LANG) && _MSVC_LANG >= 201402L) || __cplusplus >= 201402L)
+#   define RTTR_CXX_STD RTTR_CXX_14
+#elif ((defined(_MSVC_LANG) && _MSVC_LANG >= 201103L) || __cplusplus >= 201103L)
+#   define RTTR_CXX_STD RTTR_CXX_11
 #endif
 
 
